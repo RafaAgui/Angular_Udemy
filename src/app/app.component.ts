@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'new-project';
+  public title = 'new-project';
+  public mostrar_videojuego: boolean = true;
+
+
+  mostrarVideojuegos(value: boolean){
+    this.mostrar_videojuego = value;
+  }
 }
