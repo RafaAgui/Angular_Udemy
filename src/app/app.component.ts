@@ -10,7 +10,7 @@ import {config } from './models/config';
 export class AppComponent {
   public title = 'new-project';
   public desciption: string;
-  public mostrar_videojuego: boolean = true;
+
   public config: any;
 
   constructor (){
@@ -18,7 +18,5 @@ export class AppComponent {
     this.title = config.title;
     this.desciption = config.description;
   }
-  mostrarVideojuegos(value: boolean){
-    this.mostrar_videojuego = value;
-  }
+
 }

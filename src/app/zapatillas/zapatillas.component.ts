@@ -3,7 +3,8 @@ import { Zapatilla } from '../models/zapatilla';
 
 @Component ({
   selector: 'zapatillas',
-  templateUrl: './zapatillas.component.html'
+  templateUrl: './zapatillas.component.html',
+  styleUrls: ['./zapatillas.component.css']
 })
 
 export class ZapatillasComponent {

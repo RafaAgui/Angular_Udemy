@@ -18,7 +18,14 @@
 
 <ul>
   <li *ngFor="let zapatilla of zapatillas" >
-    {{zapatilla.name}}: <strong>{{zapatilla.price}}€</strong><span *ngIf="zapatilla.price <= 100"> - En oferta</span>
+    {{zapatilla.name}}:
+    <strong [ngClass]="{
+      'fondoRojo': zapatilla.price > 100,
+      'subrayado':zapatilla.brand == 'Nike'
+    }">
+      {{zapatilla.price}}€
+    </strong>
+    <span *ngIf="zapatilla.price <= 100"> - En oferta</span>
   </li>
 </ul>
 

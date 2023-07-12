@@ -1,3 +1,4 @@
+<div *ngIf="mostrar_videojuego">
 <h2> {{ title }}</h2>
 <p> {{list}}</p>
   <ul>
@@ -5,3 +6,6 @@
     <li>Mario Bros</li>
     <li>Prince of persia</li>
   </ul>
+</div>
+  <button (click)="mostrarVideojuegos(true)" *ngIf="!mostrar_videojuego">Mostrar Videojuegos</button>
+  <button (click)="mostrarVideojuegos(false)" *ngIf="mostrar_videojuego">ocultar Videojuegos</button>

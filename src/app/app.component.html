@@ -1,9 +1,15 @@
+<nav class="primary-nav">
+  <a [routerLink]="['/']" routerLinkActive="router-link-active" >Home</a>
+  <a [routerLink]="['/zapatillas']" routerLinkActive="router-link-active">zapatillas</a>
+  <a [routerLink]="['/videojuegos']" routerLinkActive="router-link-active">videojuegos</a>
+  <a [routerLink]="['/cursos']" routerLinkActive="router-link-active">cursos</a>
+</nav>
+
+
 <div [ngStyle]="{'background':config.background,
   'padding': '1rem'}">
 <h1>{{ title }}</h1>
 <p>{{ desciption }}</p>
 </div>
-<videojuego *ngIf="mostrar_videojuego"></videojuego>
-<button (click)="mostrarVideojuegos(true)" *ngIf="!mostrar_videojuego">Mostrar Videojuegos</button>
-<button (click)="mostrarVideojuegos(false)" *ngIf="mostrar_videojuego">ocultar Videojuegos</button>
-<zapatillas></zapatillas>
+
+<router-outlet></router-outlet>

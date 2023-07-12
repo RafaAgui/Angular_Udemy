@@ -1,0 +1,13 @@
+<h1>Aprendiendo Angular con Udemy</h1>
+
+<div *ngIf="identify; then identificado else noidentificado"></div>
+
+<ng-template #identificado>
+  <p>Bienvenido Rafael Aguilar</p>
+  <button (click)="identifyOff()">No quieres estar Identifícado</button>
+</ng-template>
+
+<ng-template #noidentificado>
+  <p>NO estás identificado</p>
+  <button (click)="identifyOn()">Identifícate</button>
+</ng-template>
