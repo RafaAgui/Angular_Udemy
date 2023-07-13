@@ -6,6 +6,7 @@ import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { VidejuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { HomeComponent } from './home/home.component';
+import { ExternoComponent } from './externo/externo.component';
 
 const routes: Routes = [
   //Rutas de la aplicación
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"videojuegos", component:VidejuegoComponent},
   {path:"cursos", component:CursosComponent},
   {path:"cursos/:name", component:CursosComponent},
+  {path:"externo", component:ExternoComponent},
   {path:"**", redirectTo: 'home'}
 ];
 
