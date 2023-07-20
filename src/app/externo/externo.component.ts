@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PeticionesService } from '../services/peticiones.service';
 
@@ -12,12 +13,18 @@ export class ExternoComponent implements OnInit{
 
   public user: any;
   public userId: any;
+  public newUser: any;
+  usedSave: any
 
     constructor(
       private _peticionesService: PeticionesService
     ){
 
       this.userId = 1;
+      this.newUser = {
+        'name': '',
+        'job': ''
+      };
     }
 
     ngOnInit(){
@@ -33,5 +40,18 @@ export class ExternoComponent implements OnInit{
           console.log(<any>error);
         }
       )
+    }
+
+    onSubmit(form: any){
+      this._peticionesService.addUser(this.newUser).subscribe(
+        response => {
+          this.usedSave = response;
+
+          form.reset();
+        },
+        error => {
+          console.log(<any>error);
+        }
+      );
     }
 }

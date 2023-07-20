@@ -1,6 +1,42 @@
+<h2>Crear usuario</h2>
+<form #new_User="ngForm" (ngSubmit)="onSubmit(new_User)">
+  <p>
+    <label for="name">name</label>
+    <input required pattern="[a-zA-Z]+" type="text" name="name" #name="ngModel" [(ngModel)]="newUser.name">
+    <span *ngIf="name.touched && !name.valid">El campo no es valido</span>
+  </p>
+  <p>
+    <label for="job">job</label>
+    <input required pattern="[a-zA-Z\s\p{P}]+" type="text" name="job" #job="ngModel" [(ngModel)]="newUser.job">
+    <span *ngIf="job.touched && !job.valid">El campo no es valido</span>
+  </p>
+
+
+  <p>
+    <input type="submit" value="enviar" [disabled]="!new_User.form.valid">
+  </p>
+
+</form>
+<hr>
+
+<div *ngIf="usedSave">
+  <p>
+    <strong>
+      {{ usedSave.name}}:
+    </strong>
+    {{ usedSave.job}}:
+  </p>
+  <hr>
+
+
+</div>
+
 <input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUser()">
 <div *ngIf="!user">cargando...</div>
 <div *ngIf="user">
   <h2>{{user.first_name + ' ' + user.last_name}}</h2>
   <img src="{{ user.avatar }}" alt="" width="200">
 </div>
+
+
+
